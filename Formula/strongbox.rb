@@ -6,10 +6,10 @@ class Strongbox < Formula
 
   if OS.mac?
     url "https://github.com/mvisonneau/strongbox/releases/download/0.1.7/strongbox_0.1.7_darwin_amd64.tar.gz"
-    sha256 "ebea37bc6ddddf3884ab7b2c233e6bd3178f8b87dfa051eb72ba3727b6a57254"
+    sha256 "871ed3563c0b047113e14f2d56ade70482241da29f98085fe1f6ab73b3059a45"
   elsif OS.linux?
     url "https://github.com/mvisonneau/strongbox/releases/download/0.1.7/strongbox_0.1.7_linux_amd64.tar.gz"
-    sha256 "8b8bb37285606e6533c7b6fa631959628e949eb286f0667e3cf1ac2448e95a72"
+    sha256 "7d5d8b48734a36983d6443983e8a5814736d1e01a114d8cc2dae86074bfd58c7"
   end
 
   def install
