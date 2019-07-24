@@ -2,14 +2,14 @@
 class S5 < Formula
   desc "Safely Store Super Sensitive Stuff"
   homepage "https://github.com/mvisonneau/s5"
-  version "0.1.4"
+  version "0.1.5"
 
   if OS.mac?
-    url "https://github.com/mvisonneau/s5/releases/download/0.1.4/s5_0.1.4_darwin_amd64.tar.gz"
-    sha256 "a604bf3d3c020b760b4c3bfa810ac722fcbef4ea916744790eafcbae5e04e9d0"
+    url "https://github.com/mvisonneau/s5/releases/download/0.1.5/s5_0.1.5_darwin_amd64.tar.gz"
+    sha256 "efcdfc7e971992e13513d3b69eef6a8c64ae8adc283cac7f54af829b1c7c7346"
   elsif OS.linux?
-    url "https://github.com/mvisonneau/s5/releases/download/0.1.4/s5_0.1.4_linux_amd64.tar.gz"
-    sha256 "f4bc520dcab7f104e02ce9fbb15685d86957dfbca8a04fe0577804beb29ca59f"
+    url "https://github.com/mvisonneau/s5/releases/download/0.1.5/s5_0.1.5_linux_amd64.tar.gz"
+    sha256 "a96a58070f2e9e7cdd46e98251054c4986a29bed9d32affe5199d990f5a5cf56"
   end
 
   def install
