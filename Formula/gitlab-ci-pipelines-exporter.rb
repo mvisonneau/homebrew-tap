@@ -6,10 +6,10 @@ class GitlabCiPipelinesExporter < Formula
 
   if OS.mac?
     url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.3/gitlab-ci-pipelines-exporter_0.2.3_darwin_amd64.tar.gz"
-    sha256 "78c16746ea042b8a24b72fda3ced4a9ab054cca517dfa57df628a0455d98bbbd"
+    sha256 "b1dae241f3e6093720f4d6dd352fb77f35a89dbf5f8847dd1b0fdb759e4a7466"
   elsif OS.linux?
     url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.3/gitlab-ci-pipelines-exporter_0.2.3_linux_amd64.tar.gz"
-    sha256 "676a279b24384d0ba3bb1fbf5872864ea9c6fda8c4b510d60d1c47eaa8be63fa"
+    sha256 "af1de6e89803630a6b017feebb68fc8b9e96ac4a4e01b55c976b91d16f913a59"
   end
 
   def install
