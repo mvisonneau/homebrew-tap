@@ -2,16 +2,23 @@
 class GitlabMerger < Formula
   desc "Automated merge request creation for GitLab projects"
   homepage "https://github.com/mvisonneau/gitlab-merger"
-  version "0.1.0"
+  version "0.1.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.0/gitlab-merger_0.1.0_darwin_amd64.tar.gz"
-    sha256 "0619c0d2cd024d16aa528add311c142f099dfd68a956995c209ed0274492c65e"
+    url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.1/gitlab-merger_0.1.1_darwin_amd64.tar.gz"
+    sha256 "8ae37648913283a1ecdf072607d3a5bee9c4459d91f3f53dff176f689b484942"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.0/gitlab-merger_0.1.0_linux_amd64.tar.gz"
-      sha256 "ab91dcb82ccb1b1e00671560e9ac73858720d471f179c97c615bf3a28c300b99"
+      url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.1/gitlab-merger_0.1.1_linux_amd64.tar.gz"
+      sha256 "9d1014d8bb560267e41e7edc3416f06633a082108dccbc092630ae17f7432998"
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.1/gitlab-merger_0.1.1_linux_arm64.tar.gz"
+        sha256 "e809e83cf53e3c572a245710832633df8d7130b6bafcd7296d0242004366ab66"
+      else
+      end
     end
   end
 
