@@ -2,21 +2,21 @@
 class GitlabCiPipelinesExporter < Formula
   desc "GitLab CI pipelines exporter (prometheus/open-metrics)"
   homepage "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter"
-  version "0.2.8"
+  version "0.2.9"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.8/gitlab-ci-pipelines-exporter_0.2.8_darwin_amd64.tar.gz"
-    sha256 "2a420980d31b303bd929e65637757ce60d65446e2c7b9616b13a3833c2f69428"
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.9/gitlab-ci-pipelines-exporter_0.2.9_darwin_amd64.tar.gz"
+    sha256 "110747b21dde3cfb687ea97ef50eb469240613e2c5cc8f6d0eb83223d50d8fa4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.8/gitlab-ci-pipelines-exporter_0.2.8_linux_amd64.tar.gz"
-      sha256 "98a5a0bbe3132c3baa155c04a952ef9c05ecbd8b46e7108afbb194a00f52d5fa"
+      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.9/gitlab-ci-pipelines-exporter_0.2.9_linux_amd64.tar.gz"
+      sha256 "267b5c27d9af5bdec62973d802bec7c4244b87ccc400024c1d239c908f7ae85d"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.8/gitlab-ci-pipelines-exporter_0.2.8_linux_arm64.tar.gz"
-        sha256 "6533f2a2dfcfc265cfe3b3123cbc12daba813213a475c0598600cc6f4d2865f3"
+        url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/0.2.9/gitlab-ci-pipelines-exporter_0.2.9_linux_arm64.tar.gz"
+        sha256 "db8c3b5664e68d442b36d6240287fb528f6dfb0ff137f9be05bf10236733cbac"
       else
       end
     end
