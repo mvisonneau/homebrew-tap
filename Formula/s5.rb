@@ -2,21 +2,21 @@
 class S5 < Formula
   desc "Safely Store Super Sensitive Stuff"
   homepage "https://github.com/mvisonneau/s5"
-  version "0.1.7"
+  version "0.1.8"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mvisonneau/s5/releases/download/0.1.7/s5_0.1.7_darwin_amd64.tar.gz"
-    sha256 "74c96b2a2f6e3fe56e8731434df8b5398562e2230b49072dae57aad7acffc69b"
+    url "https://github.com/mvisonneau/s5/releases/download/0.1.8/s5_0.1.8_darwin_amd64.tar.gz"
+    sha256 "f8b9f58d702486f30f302c69ca6d8f3105657d774fe2a26f8c4d232af5b0001b"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/s5/releases/download/0.1.7/s5_0.1.7_linux_amd64.tar.gz"
-      sha256 "67cf185f8ff65005a92c10302eec756afd65495970a4d0dabbf348efc557ebce"
+      url "https://github.com/mvisonneau/s5/releases/download/0.1.8/s5_0.1.8_linux_amd64.tar.gz"
+      sha256 "3b31ee0f1d5fb97db3bc5a39c19190f9ba1fe9d7f20dfc3fd80a92e4450ca7fd"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mvisonneau/s5/releases/download/0.1.7/s5_0.1.7_linux_arm64.tar.gz"
-        sha256 "15a663f47adc6a0748b163b61d143e8b26195780ac2a15097843c09b432aa883"
+        url "https://github.com/mvisonneau/s5/releases/download/0.1.8/s5_0.1.8_linux_arm64.tar.gz"
+        sha256 "d787779bdfba5a9808dd865565365dac6f7d1510b8682b288f505b1c9d2e2bef"
       else
       end
     end
