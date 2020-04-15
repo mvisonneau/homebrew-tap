@@ -7,16 +7,16 @@ class GitlabMerger < Formula
 
   if OS.mac?
     url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.3/gitlab-merger_0.1.3_darwin_amd64.tar.gz"
-    sha256 "d2be1137307b0b5453aaa405e0baaeb2059008d5b31089d2851a78969d0a74dd"
+    sha256 "109af6d99871ee927c1668ce7517bec68829a5cb182374628e8acd72940317e2"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.3/gitlab-merger_0.1.3_linux_amd64.tar.gz"
-      sha256 "675fe3c0fa9a760a446121ffff0abb3c5f1ca63df7b8a5b225dbcb478c348250"
+      sha256 "7f3847fd5978662cd2bb668613b9ab29fa7dac135d0651d9938b2946552c8f4a"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
         url "https://github.com/mvisonneau/gitlab-merger/releases/download/0.1.3/gitlab-merger_0.1.3_linux_arm64.tar.gz"
-        sha256 "7c503fadd9fd09fbf84d954b173b7d4fafc3d49a7c1ca0f73595708ca5721e90"
+        sha256 "76caae385f56383f9fc7a0c056d405bcd298ef7eaac020221dc4baa26334fcd2"
       else
       end
     end
