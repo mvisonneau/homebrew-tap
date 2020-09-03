@@ -2,21 +2,21 @@
 class Vac < Formula
   desc "VAC - Vault AWS Credentials Manager"
   homepage "https://github.com/mvisonneau/vac"
-  version "0.0.2"
+  version "0.0.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mvisonneau/vac/releases/download/0.0.2/vac_0.0.2_darwin_amd64.tar.gz"
-    sha256 "66be08fbe43b61787157aa675f9752d34b49994377a1636f14e1cd52f37a1a61"
+    url "https://github.com/mvisonneau/vac/releases/download/0.0.3/vac_0.0.3_darwin_amd64.tar.gz"
+    sha256 "8b9f3a7a7ba82d9d8779a81e9fc9c775b09c86e2d72ce3840b8bfff8adf7ce8c"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/vac/releases/download/0.0.2/vac_0.0.2_linux_amd64.tar.gz"
-      sha256 "12d04183fe185721a1c4073777725f67a10865daf5ca01671766b53d7c5a92c5"
+      url "https://github.com/mvisonneau/vac/releases/download/0.0.3/vac_0.0.3_linux_amd64.tar.gz"
+      sha256 "8588ae6c1c2f719404a07e5f9f3057d7f636b61477f83700dc5c7d3c6edf9d29"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mvisonneau/vac/releases/download/0.0.2/vac_0.0.2_linux_arm64.tar.gz"
-        sha256 "c1cf81353f4b18852ff3fd3539fa6d440549d82da45c8b9cbd473814333b9530"
+        url "https://github.com/mvisonneau/vac/releases/download/0.0.3/vac_0.0.3_linux_arm64.tar.gz"
+        sha256 "042f97ce694cad871f4954497e75560f11accc8d928c04f23137774b8143516e"
       else
       end
     end
