@@ -2,21 +2,21 @@
 class Tfcw < Formula
   desc "Safely Store Super Sensitive Stuff"
   homepage "https://github.com/mvisonneau/s5"
-  version "0.0.8"
+  version "0.0.9"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mvisonneau/tfcw/releases/download/0.0.8/tfcw_0.0.8_darwin_amd64.tar.gz"
-    sha256 "30f7dd8f1a86acc810dc96f41a9e60a7b77811d129301af1d96dd51b4670e98e"
+    url "https://github.com/mvisonneau/tfcw/releases/download/0.0.9/tfcw_0.0.9_darwin_amd64.tar.gz"
+    sha256 "c1e062f72c1a01ad323de2adb6deb5a94e557706803a506cd392137e90ca58e2"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/tfcw/releases/download/0.0.8/tfcw_0.0.8_linux_amd64.tar.gz"
-      sha256 "ba7c147df28bc211d62433cdd73b21f49ea0cd44e9b15865913bf95951925d0f"
+      url "https://github.com/mvisonneau/tfcw/releases/download/0.0.9/tfcw_0.0.9_linux_amd64.tar.gz"
+      sha256 "ff92b0a963d06a5048e0edaf6270677ae34e60414ef3cbd23e2914d1d534d44b"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mvisonneau/tfcw/releases/download/0.0.8/tfcw_0.0.8_linux_arm64.tar.gz"
-        sha256 "b4a86dac27fa296b9c540632af0990605e86ba6cfff4bc048b36dd034c7f934b"
+        url "https://github.com/mvisonneau/tfcw/releases/download/0.0.9/tfcw_0.0.9_linux_arm64.tar.gz"
+        sha256 "84e84b29f8e9396cf4b8f7aca8a6941cbc34ceb7e4b8e3b1cbb340771b481bfb"
       else
       end
     end
