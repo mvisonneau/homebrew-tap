@@ -2,24 +2,20 @@
 class Tfcw < Formula
   desc "Terraform Cloud Wrapper"
   homepage "https://github.com/mvisonneau/tfcw"
-  version "0.0.10"
+  version "0.0.11"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.10/tfcw_0.0.10_darwin_amd64.tar.gz"
-    sha256 "c546883acdbf2a28f62c4756be597fe8cdf0c6be01501f7da5a5a5414ea0bc81"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.10/tfcw_0.0.10_linux_amd64.tar.gz"
-      sha256 "042d79fd2f93dc9285c803cbd44d97e1b51886fbdbbbf0f1f08935002c160bcb"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.10/tfcw_0.0.10_linux_arm64.tar.gz"
-        sha256 "2f47109c451f23a752640acf9edf30ed24794dbb0b845bd616ac9b6dd6f95d50"
-      else
-      end
-    end
+    url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.11/tfcw_v0.0.11_darwin_amd64.tar.gz"
+    sha256 "10f97fbf40a489945fa0ffd88945e3a66c0f41bac42a0b1349cd736bfc05c6d9"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.11/tfcw_v0.0.11_linux_amd64.tar.gz"
+    sha256 "faf7d3c409d495021fd68cc3cc45ea5a98cfdb67d7564a8145970c0dac792844"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.11/tfcw_v0.0.11_linux_arm64.tar.gz"
+    sha256 "2b970517fb5402dbd17816f76f76fb65ec087ebbfcc515c8dda6258ee5ba3bd9"
   end
 
   def install
