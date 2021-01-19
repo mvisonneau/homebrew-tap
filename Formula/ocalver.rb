@@ -7,15 +7,15 @@ class Ocalver < Formula
 
   if OS.mac?
     url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4/ocalver_v0.0.4_darwin_amd64.tar.gz"
-    sha256 "09c31b1f3d06d972a261c3745e0aaec25da14fbc62ea8d255d892e79135a10d2"
+    sha256 "e80d9f0558be394303082b2aa86d1093e258dc6505f28e1025b2e3cc12fc22be"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4/ocalver_v0.0.4_linux_amd64.tar.gz"
-    sha256 "d664a1fb985d2d4b93753f8cf5608a2a3b3cc60bf6208b81da891539a7d48d28"
+    sha256 "c06405b46ab3ee3efa366656a0a985cacf7a915f36207c5bbdc5434461d3de03"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4/ocalver_v0.0.4_linux_arm64.tar.gz"
-    sha256 "d45b87d9abbb59e9b86df6390c88da5ea4ae0c4d640dc669e05041bb5ec2584a"
+    sha256 "b30a18bfb13e0a6c10d6465f66303fee74f99540bfaebf96a43f6d53b1d6bdfb"
   end
 
   def install
