@@ -10,19 +10,19 @@ class Ocalver < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_darwin_amd64.tar.gz"
-    sha256 "03aebb4d634ee4f9d71ff37c0581b33aaf3d32a176873d98bb68aa72eb24b457"
+    sha256 "9bf2d8df3ade17e0c5a0307c97ac7d850dbea7eb7a781f9fc60d60e373aca65d"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_darwin_arm64.tar.gz"
-    sha256 "c76d09f9e4de73812a10807b01e9d3c947daf5abdd026db138883ec003c010b2"
+    sha256 "f1d9339180b46b602ae6de85fd4a5c78b49acd51970d30936fcec877736f082a"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_linux_amd64.tar.gz"
-    sha256 "c3dc4d90026998c78510165ab04d9eba0e75629a5a23a1b3792e1e7d04d4cfc3"
+    sha256 "ffd9b265472a22941f8ca069bb8c0bad4e620e68eeb2388acd5ee34ab6517d3d"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_linux_arm64.tar.gz"
-    sha256 "be5067a9a700bc41c2f2c584da3a924d47dbb8c4d0059ccfd951a3ba3854fe63"
+    sha256 "612bbf5016e882c743f8befb21baa8dc7ea9bf11e5f6ffbed56601ec371ffda4"
   end
 
   def install
