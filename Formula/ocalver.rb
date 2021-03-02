@@ -5,24 +5,24 @@
 class Ocalver < Formula
   desc "Opinionated CalVer generator"
   homepage "https://github.com/mvisonneau/ocalver"
-  version "0.0.4-7-gd07f76c"
+  version "0.0.4-8-gf5f05eb"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_darwin_amd64.tar.gz"
-    sha256 "5fc064ce5287103cbabd50793190f9c55bfb63286f05e85d19eabd1786b6c550"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-8-gf5f05eb/ocalver_v0.0.4-8-gf5f05eb_darwin_amd64.tar.gz"
+    sha256 "fdc1f526d4281a88794863cae97b8aaf37758a520a8b69914d95159259c09f08"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_darwin_arm64.tar.gz"
-    sha256 "2b93d99e431ff4ba5ff176f8232dcf3cce07cf07a6e1f2a24a3fccbd3207340b"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-8-gf5f05eb/ocalver_v0.0.4-8-gf5f05eb_darwin_arm64.tar.gz"
+    sha256 "a6cea14a33a6afa977d3b6fe9f922646604fa5ca0b569c159279adc9253f8bdc"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_linux_amd64.tar.gz"
-    sha256 "c1eaee95d7bad894e461025282411e0daf939dfe93825769d4a071ac998fdb4b"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-8-gf5f05eb/ocalver_v0.0.4-8-gf5f05eb_linux_amd64.tar.gz"
+    sha256 "8a1a9903697f1562493defd1ef26e9dea15c34ac4c737c239d0a1c9d5cf2e9b5"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_linux_arm64.tar.gz"
-    sha256 "b366a21a91f1939469b46bb82eb9a54a457e657f300f8d4b522bf76e79fbf556"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-8-gf5f05eb/ocalver_v0.0.4-8-gf5f05eb_linux_arm64.tar.gz"
+    sha256 "af667baecfbe685eb7b4e4fd0f63910896c01a19faa6ab8f4f088773a799d075"
   end
 
   def install
