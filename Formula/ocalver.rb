@@ -5,24 +5,24 @@
 class Ocalver < Formula
   desc "Opinionated CalVer generator"
   homepage "https://github.com/mvisonneau/ocalver"
-  version "0.0.4-9-gb800c8d"
+  version "0.0.5"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_darwin_amd64.tar.gz"
-    sha256 "9bf2d8df3ade17e0c5a0307c97ac7d850dbea7eb7a781f9fc60d60e373aca65d"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.5/ocalver_v0.0.5_darwin_amd64.tar.gz"
+    sha256 "b10cff88ca056823a241c0b74776efa5e060ad76ec56ba1b6e958161f2c48023"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_darwin_arm64.tar.gz"
-    sha256 "f1d9339180b46b602ae6de85fd4a5c78b49acd51970d30936fcec877736f082a"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.5/ocalver_v0.0.5_darwin_arm64.tar.gz"
+    sha256 "abc4b5b886024fbaaea9de9edf4158833249e8dce3077fecc7b0482647f96d4c"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_linux_amd64.tar.gz"
-    sha256 "ffd9b265472a22941f8ca069bb8c0bad4e620e68eeb2388acd5ee34ab6517d3d"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.5/ocalver_v0.0.5_linux_amd64.tar.gz"
+    sha256 "18aedefa72344478add7191d990fa195957a1f58fe8741c52708b84a92a28664"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-9-gb800c8d/ocalver_v0.0.4-9-gb800c8d_linux_arm64.tar.gz"
-    sha256 "612bbf5016e882c743f8befb21baa8dc7ea9bf11e5f6ffbed56601ec371ffda4"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.5/ocalver_v0.0.5_linux_arm64.tar.gz"
+    sha256 "cf6ebd6992e2760d6e99349f0c588da7f09c17432f407833809ba8acb0cfd35e"
   end
 
   def install
