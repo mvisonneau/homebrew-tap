@@ -5,24 +5,24 @@
 class Ocalver < Formula
   desc "Opinionated CalVer generator"
   homepage "https://github.com/mvisonneau/ocalver"
-  version "0.0.0-edge"
+  version "0.0.4-7-gd07f76c"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/ocalver/releases/download/0.0.0-edge/ocalver_0.0.0-edge_darwin_amd64.tar.gz"
-    sha256 "6a0cb7e51f5157df62f1aaef3b32a1a4d78d864289e54659571e134530d712e2"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_darwin_amd64.tar.gz"
+    sha256 "5fc064ce5287103cbabd50793190f9c55bfb63286f05e85d19eabd1786b6c550"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mvisonneau/ocalver/releases/download/0.0.0-edge/ocalver_0.0.0-edge_darwin_arm64.tar.gz"
-    sha256 "d13c2ad8ceb90cb602bfd836971759ffc925fb371bfd97740fe3fcbc538a4b89"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_darwin_arm64.tar.gz"
+    sha256 "2b93d99e431ff4ba5ff176f8232dcf3cce07cf07a6e1f2a24a3fccbd3207340b"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/ocalver/releases/download/0.0.0-edge/ocalver_0.0.0-edge_linux_amd64.tar.gz"
-    sha256 "742850abe2315ae9aa0a215e6169c8a1f4f9ae9a9e0307e72ada71d87599bf7d"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_linux_amd64.tar.gz"
+    sha256 "c1eaee95d7bad894e461025282411e0daf939dfe93825769d4a071ac998fdb4b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/ocalver/releases/download/0.0.0-edge/ocalver_0.0.0-edge_linux_arm64.tar.gz"
-    sha256 "69a3d8fa5e0c2b11f679fa23a7b1e29ce4f367a1327878a0f92b5019444523bd"
+    url "https://github.com/mvisonneau/ocalver/releases/download/v0.0.4-7-gd07f76c/ocalver_v0.0.4-7-gd07f76c_linux_arm64.tar.gz"
+    sha256 "b366a21a91f1939469b46bb82eb9a54a457e657f300f8d4b522bf76e79fbf556"
   end
 
   def install
