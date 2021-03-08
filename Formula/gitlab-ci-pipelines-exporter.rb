@@ -5,20 +5,24 @@
 class GitlabCiPipelinesExporter < Formula
   desc "GitLab CI pipelines exporter (prometheus/open-metrics)"
   homepage "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter"
-  version "0.4.7"
+  version "0.4.8"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.7/gitlab-ci-pipelines-exporter_v0.4.7_darwin_amd64.tar.gz"
-    sha256 "b801ebd1040df362af64a9412ffa3d1b07fec633e633d8f13f98fecfd5f824f9"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.8/gitlab-ci-pipelines-exporter_v0.4.8_darwin_amd64.tar.gz"
+    sha256 "9277c520949fe4a18911f0b50112f06b2f920060c57bd3ef4f3a52c8e5de386b"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.8/gitlab-ci-pipelines-exporter_v0.4.8_darwin_arm64.tar.gz"
+    sha256 "abfd632e446af90b2366bbb37d87b252bad2d3c0f7a4c59db2f04115d00eb99a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.7/gitlab-ci-pipelines-exporter_v0.4.7_linux_amd64.tar.gz"
-    sha256 "c1f4975d62d82f7c70dfa5f46631d8812bdaae6daa49103275f7c4a50ecfe704"
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.8/gitlab-ci-pipelines-exporter_v0.4.8_linux_amd64.tar.gz"
+    sha256 "af518060d3a14c7cc27a2041c6d6e986b34fa74e6f345ce6cf75e618ddaa3c2a"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.7/gitlab-ci-pipelines-exporter_v0.4.7_linux_arm64.tar.gz"
-    sha256 "85f5a90410e86ef4921c7258ae398919da62d82beef3d47d45444072bc971a7e"
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.8/gitlab-ci-pipelines-exporter_v0.4.8_linux_arm64.tar.gz"
+    sha256 "a47f18a269d9077627ced6a101408c6681c36f25c0c310d07f409f16ada798fc"
   end
 
   def install
