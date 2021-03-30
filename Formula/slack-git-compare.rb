@@ -5,24 +5,24 @@
 class SlackGitCompare < Formula
   desc "Compare git references within Slack"
   homepage "https://github.com/mvisonneau/slack-git-compare"
-  version "0.0.1"
+  version "0.1.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.0.1/slack-git-compare_v0.0.1_darwin_amd64.tar.gz"
-    sha256 "75768f5d508189413ce22ad72aa29d4acfddaef5ca2a2e94761eabeeff9a7ba4"
+    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_darwin_amd64.tar.gz"
+    sha256 "5a72c6d9c86f59f25e1997c30da07458c458f56173285ae49b28599be0730e4e"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.0.1/slack-git-compare_v0.0.1_darwin_arm64.tar.gz"
-    sha256 "53db0fd756ce1453de475de4a53c3921cddce9cb6c69e5bdd1542481054c9b88"
+    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_darwin_arm64.tar.gz"
+    sha256 "b61dfcf38e93d4a3e5e668f9584ea5d0293f43f96805c870f702840f3224ea06"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.0.1/slack-git-compare_v0.0.1_linux_amd64.tar.gz"
-    sha256 "dc4b58ecee599d86f1b778e175acae08e437f190b6b43ebf9ec77a9a050b7f72"
+    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_linux_amd64.tar.gz"
+    sha256 "0707e79d0ba29ff5cf5e2f7e35188137e27973c0228105a86becc5412c5ff3d9"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.0.1/slack-git-compare_v0.0.1_linux_arm64.tar.gz"
-    sha256 "722b37cfa918da8ed66c98962a8fac2072b70c4c256693b6062bb9123d75770b"
+    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_linux_arm64.tar.gz"
+    sha256 "9d5c4a6ddefbe3a03d7923576e7fca79a40686f2d0c88450698911ee90ae8456"
   end
 
   def install
