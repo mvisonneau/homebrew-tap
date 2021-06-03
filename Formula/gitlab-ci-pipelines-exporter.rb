@@ -5,24 +5,24 @@
 class GitlabCiPipelinesExporter < Formula
   desc "GitLab CI pipelines exporter (prometheus/open-metrics)"
   homepage "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter"
-  version "0.4.9"
+  version "0.5.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.9/gitlab-ci-pipelines-exporter_v0.4.9_darwin_amd64.tar.gz"
-    sha256 "be3eaca6aef3c719eefe7a19d5d2ef61553880dbdf3a40cd99dbea145ddbe860"
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.0/gitlab-ci-pipelines-exporter_v0.5.0_darwin_amd64.tar.gz"
+    sha256 "7f7c483eb75d238bccb8059418e9b8ae8b06f355ebb7bc4539e84b0dbc364bcd"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.9/gitlab-ci-pipelines-exporter_v0.4.9_darwin_arm64.tar.gz"
-    sha256 "a5618309d561eb032bf570a30074f51561242b73550a2f3b4db84c37b6a8e7a2"
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.0/gitlab-ci-pipelines-exporter_v0.5.0_darwin_arm64.tar.gz"
+    sha256 "a9e69509e15ddf19224923d85ece620bd3c4a53ac65c82c7364c1ea03d6e7198"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.9/gitlab-ci-pipelines-exporter_v0.4.9_linux_amd64.tar.gz"
-    sha256 "55e7d6f5defe7928ebcbc8eb5319d8b899f10fa88ad95827887ae4dd36b73413"
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.0/gitlab-ci-pipelines-exporter_v0.5.0_linux_amd64.tar.gz"
+    sha256 "9d598eb4d635eff96f386226af5c3c8bbc5e868c2281a8a4578817a9184f679b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.4.9/gitlab-ci-pipelines-exporter_v0.4.9_linux_arm64.tar.gz"
-    sha256 "9719eadbe8def27d38c84f9c32627f85a38d95629f9d68579bd53def05bb53b9"
+    url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.0/gitlab-ci-pipelines-exporter_v0.5.0_linux_arm64.tar.gz"
+    sha256 "6a5d1f3ce83548e221ed7b5cb0920cb90cfba9c18e5f872b43125b66d18a23df"
   end
 
   def install
