@@ -5,32 +5,43 @@
 class Tfcw < Formula
   desc "Terraform Cloud Wrapper"
   homepage "https://github.com/mvisonneau/tfcw"
-  version "0.0.12"
-  bottle :unneeded
+  version "0.0.13"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.12/tfcw_v0.0.12_darwin_amd64.tar.gz"
-      sha256 "f53e5fdb1e8127d563c5b9756fdef871d85e37924403cbb2056b3f94348f8c80"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.12/tfcw_v0.0.12_darwin_arm64.tar.gz"
-      sha256 "37b26b23103cce8e70bdd1c90f055390b579a5ef02961bb5f7efa5fa6b9d5698"
+      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.13/tfcw_v0.0.13_darwin_arm64.tar.gz"
+      sha256 "27279a7fcf95f7a48f1248006a29fd435b4d0a38a5b001812cb119a7d7f41b37"
+
+      def install
+        bin.install "tfcw"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.13/tfcw_v0.0.13_darwin_amd64.tar.gz"
+      sha256 "3a63903416a98dfa899717d8b237e6ece4f816d71572c02770513ef7bf52a185"
+
+      def install
+        bin.install "tfcw"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.12/tfcw_v0.0.12_linux_amd64.tar.gz"
-      sha256 "5fc69a23a26880e430556f0fd5ea354c41feb094bdcd27f8d4eb40897bfc6401"
+      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.13/tfcw_v0.0.13_linux_amd64.tar.gz"
+      sha256 "f54ec31cc166330215d99e81eb1b134de7765a4aa3d9185951201f52dda23864"
+
+      def install
+        bin.install "tfcw"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.12/tfcw_v0.0.12_linux_arm64.tar.gz"
-      sha256 "b0e7419e682d522c186273e018664cfda94dca4b5cf32d1139f19034dc9099eb"
-    end
-  end
+      url "https://github.com/mvisonneau/tfcw/releases/download/v0.0.13/tfcw_v0.0.13_linux_arm64.tar.gz"
+      sha256 "60fdbbbeb39db131e0210f03452c663f36fdb318964880ce0ea3b14302596bb2"
 
-  def install
-    bin.install "tfcw"
+      def install
+        bin.install "tfcw"
+      end
+    end
   end
 end
