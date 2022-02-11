@@ -5,32 +5,51 @@
 class S5 < Formula
   desc "Safely Store Super Sensitive Stuff"
   homepage "https://github.com/mvisonneau/s5"
-  version "0.1.11"
-  bottle :unneeded
+  version "0.1.12"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.11/s5_v0.1.11_darwin_amd64.tar.gz"
-      sha256 "c3721d59175a961a42b94029e85fc57bb6e422e377009d1af71478be874883cf"
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_darwin_amd64.tar.gz"
+      sha256 "92401d1784ba93f0fd1908d9caa8271ed94c22615b5e7ef796a4d08069bf06ce"
+
+      def install
+        bin.install "s5"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.11/s5_v0.1.11_darwin_arm64.tar.gz"
-      sha256 "eaf27050a454bec71f2492011afac19c373ecebbc891370a844c586925a2c56e"
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_darwin_arm64.tar.gz"
+      sha256 "9444b0a267c3c04775563159ddfffb7d4bae2d71427c6c8c0d14b30b65e059a4"
+
+      def install
+        bin.install "s5"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.11/s5_v0.1.11_linux_amd64.tar.gz"
-      sha256 "b2f3987d5dcc53af3b7e908dcb0ce0b59525f040d9e0151e13392344371f703c"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.11/s5_v0.1.11_linux_arm64.tar.gz"
-      sha256 "093e7276f46d5d97424d2002eac7e74d99c2e866a1821e8a927e690e76228301"
-    end
-  end
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_linux_arm64.tar.gz"
+      sha256 "c275a1c762253b42c5a294fddf035d68d4cd978875aa1face900c3232fc51cc6"
 
-  def install
-    bin.install "s5"
+      def install
+        bin.install "s5"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_linux_armv6.tar.gz"
+      sha256 "3900f41a56344677373e8839c9fc59f050fcc83825f056162ec52fa389c35d2b"
+
+      def install
+        bin.install "s5"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_linux_amd64.tar.gz"
+      sha256 "19ce2d5a052e25d798e9f0a25a572fc6da86578b6204cd7d9e8f916a75fee92c"
+
+      def install
+        bin.install "s5"
+      end
+    end
   end
 end
