@@ -5,27 +5,43 @@
 class SlackGitCompare < Formula
   desc "Compare git references within Slack"
   homepage "https://github.com/mvisonneau/slack-git-compare"
-  version "0.1.0"
-  bottle :unneeded
+  version "0.1.1"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_darwin_amd64.tar.gz"
-    sha256 "5a72c6d9c86f59f25e1997c30da07458c458f56173285ae49b28599be0730e4e"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_darwin_arm64.tar.gz"
-    sha256 "b61dfcf38e93d4a3e5e668f9584ea5d0293f43f96805c870f702840f3224ea06"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_linux_amd64.tar.gz"
-    sha256 "0707e79d0ba29ff5cf5e2f7e35188137e27973c0228105a86becc5412c5ff3d9"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.0/slack-git-compare_v0.1.0_linux_arm64.tar.gz"
-    sha256 "9d5c4a6ddefbe3a03d7923576e7fca79a40686f2d0c88450698911ee90ae8456"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.1/slack-git-compare_v0.1.1_darwin_arm64.tar.gz"
+      sha256 "55536b92f024ef7bed570771c1bb41676c232df0605e303f9fee9f2c8473a5c4"
+
+      def install
+        bin.install "slack-git-compare"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.1/slack-git-compare_v0.1.1_darwin_amd64.tar.gz"
+      sha256 "b00c21e8f075bfdd68216dcc820aa6b2225ad3f86826153bfe8b207c44ab7da2"
+
+      def install
+        bin.install "slack-git-compare"
+      end
+    end
   end
 
-  def install
-    bin.install "slack-git-compare"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.1/slack-git-compare_v0.1.1_linux_amd64.tar.gz"
+      sha256 "273bc26a3488c9d4cd4c290cb16d766c95d49ac74cb29c1c935725bc63272a0d"
+
+      def install
+        bin.install "slack-git-compare"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mvisonneau/slack-git-compare/releases/download/v0.1.1/slack-git-compare_v0.1.1_linux_arm64.tar.gz"
+      sha256 "a064ccdaeb13252968357f20ab358124db37b6a6dea1ab269ac6ed1a478cfdea"
+
+      def install
+        bin.install "slack-git-compare"
+      end
+    end
   end
 end
