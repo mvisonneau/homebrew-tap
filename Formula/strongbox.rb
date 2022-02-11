@@ -5,27 +5,43 @@
 class Strongbox < Formula
   desc "Safely manage Hashicorp Vault secrets at rest"
   homepage "https://github.com/mvisonneau/strongbox"
-  version "0.2.1"
-  bottle :unneeded
+  version "0.2.2"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.1/strongbox_v0.2.1_darwin_amd64.tar.gz"
-    sha256 "6143ab437186ad281ad24393be3b436e068be04e9d0dfd2edff1fdfa6f27fec4"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.1/strongbox_v0.2.1_darwin_arm64.tar.gz"
-    sha256 "35004d35fb27f7b8607a437d2ce094e24675942a915be8a0a24c4f8e48632f30"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.1/strongbox_v0.2.1_linux_amd64.tar.gz"
-    sha256 "5192066461c978b0b2fa891896eadbdf8e467587b6b83e273567b5a8d5b9f94d"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.1/strongbox_v0.2.1_linux_arm64.tar.gz"
-    sha256 "d8e0307e25d0393f37279634a891292316a64be39cb6005fc0ec807188780fcc"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.2/strongbox_v0.2.2_darwin_amd64.tar.gz"
+      sha256 "95d170e99eb65e1475aeb088d2f6f58d3d8acea50098132c6318d83fb2253ef5"
+
+      def install
+        bin.install "strongbox"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.2/strongbox_v0.2.2_darwin_arm64.tar.gz"
+      sha256 "1ad48ef30c57e8df0eef7abe472034520f0026a88a963e6cff179983431f4983"
+
+      def install
+        bin.install "strongbox"
+      end
+    end
   end
 
-  def install
-    bin.install "strongbox"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.2/strongbox_v0.2.2_linux_arm64.tar.gz"
+      sha256 "b0e5c482122310aaeb56960d58c32711e824325f9481aac7d73fec5f4a614ec6"
+
+      def install
+        bin.install "strongbox"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/strongbox/releases/download/v0.2.2/strongbox_v0.2.2_linux_amd64.tar.gz"
+      sha256 "802b960d77db656a9050d78646816cc2eeb654369186da367c5428ecc00167a0"
+
+      def install
+        bin.install "strongbox"
+      end
+    end
   end
 end
