@@ -5,32 +5,43 @@
 class Vac < Formula
   desc "VAC - Vault AWS Credentials Manager"
   homepage "https://github.com/mvisonneau/vac"
-  version "0.0.6"
-  bottle :unneeded
+  version "0.0.7"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.6/vac_v0.0.6_darwin_amd64.tar.gz"
-      sha256 "8d6ebe86b89bb95908d1c17224a10b28afd68c096c89151fb78b0285263cdbbd"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.6/vac_v0.0.6_darwin_arm64.tar.gz"
-      sha256 "1b067d50483cec3c7a55d9cbb8faf8b2ccfdb8f40a8f804d3b56ddf66308c32f"
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_darwin_arm64.tar.gz"
+      sha256 "68c526d60ba16b1cae95586d87652291e85790f5f6f7581f2aa0e0f361ff63eb"
+
+      def install
+        bin.install "vac"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_darwin_amd64.tar.gz"
+      sha256 "b7a4784965bcaeae586f88d480be0dc77846a396b8e3fcbf4ef70fe451a20fba"
+
+      def install
+        bin.install "vac"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.6/vac_v0.0.6_linux_amd64.tar.gz"
-      sha256 "e703bae48c5d609ba5f8cf7a5dbe710fffa6eae2960cc265ff04c0ef6b3071e6"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.6/vac_v0.0.6_linux_arm64.tar.gz"
-      sha256 "d7c7f70fb3af511d379448c457b39ffc75b9ab33873c449a8f88cf90f6dfd3c0"
-    end
-  end
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_linux_arm64.tar.gz"
+      sha256 "3790aa3ba617ac17ad416c9c9ab8234051a1f4712143490f07eb23cb4dd41646"
 
-  def install
-    bin.install "vac"
+      def install
+        bin.install "vac"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_linux_amd64.tar.gz"
+      sha256 "5401a755a02ea1c33a2b405a79989ed7cf5f1693bcbd4e17d441e85f13a47af0"
+
+      def install
+        bin.install "vac"
+      end
+    end
   end
 end
