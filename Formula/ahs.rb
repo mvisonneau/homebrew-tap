@@ -5,20 +5,20 @@
 class Ahs < Formula
   desc "Amazon EC2 Hostname Setter"
   homepage "https://github.com/mvisonneau/ahs"
-  version "0.2.7"
+  version "0.2.8"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.7/ahs_0.2.7_darwin_arm64.tar.gz"
-      sha256 "db11d3bc8b648dc9c8a11df1644e8b7a416d48af68d2dbb5d6fc7e1a7aa3074a"
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.8/ahs_0.2.8_darwin_amd64.tar.gz"
+      sha256 "9ca41fd0d67796556d2ed79154ef02c522c052683aa67605ae50f15f65c497cf"
 
       def install
         bin.install "ahs"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.7/ahs_0.2.7_darwin_amd64.tar.gz"
-      sha256 "140d713e526a954756396463914cd3e01f09ea4c557907a2651f7130569450aa"
+    if Hardware::CPU.arm?
+      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.8/ahs_0.2.8_darwin_arm64.tar.gz"
+      sha256 "50dfe787fe1e44d030c3d4c1b92ccded5bf727a633f17f2bb226fe6e88f0e733"
 
       def install
         bin.install "ahs"
@@ -28,16 +28,16 @@ class Ahs < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.7/ahs_0.2.7_linux_arm64.tar.gz"
-      sha256 "e9c4b7258468cafbc1b6f1b3de10f9293651b305bfb74f2f513d75eae729f94f"
+      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.8/ahs_0.2.8_linux_arm64.tar.gz"
+      sha256 "74b8c55e8ddf7a7048d36e047c44b3b20751d6a8a98f4e4a47f07c41fc457472"
 
       def install
         bin.install "ahs"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.7/ahs_0.2.7_linux_amd64.tar.gz"
-      sha256 "958258388770518f990ab6cdf9d818fab9d55f15c14606fad3f87c0be54aca52"
+      url "https://github.com/mvisonneau/ahs/releases/download/v0.2.8/ahs_0.2.8_linux_amd64.tar.gz"
+      sha256 "64aa55c6c2a8b6cb5362b9e45142a56ab6d1008cac1a7ebfc8502837926e60a0"
 
       def install
         bin.install "ahs"
