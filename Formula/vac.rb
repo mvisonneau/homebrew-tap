@@ -5,20 +5,20 @@
 class Vac < Formula
   desc "VAC - Vault AWS Credentials Manager"
   homepage "https://github.com/mvisonneau/vac"
-  version "0.0.7"
+  version "0.0.8"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_darwin_arm64.tar.gz"
-      sha256 "68c526d60ba16b1cae95586d87652291e85790f5f6f7581f2aa0e0f361ff63eb"
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_darwin_arm64.tar.gz"
+      sha256 "607d4b0c5ec263172196f392d2329607b87d178009047bca3d0a56dad2fbb4b3"
 
       def install
         bin.install "vac"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_darwin_amd64.tar.gz"
-      sha256 "b7a4784965bcaeae586f88d480be0dc77846a396b8e3fcbf4ef70fe451a20fba"
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_darwin_amd64.tar.gz"
+      sha256 "438f2fb2d75861d11996bb998f9021f095f1ac255bab89fa1b9f5199527fdfa4"
 
       def install
         bin.install "vac"
@@ -28,16 +28,16 @@ class Vac < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_linux_arm64.tar.gz"
-      sha256 "3790aa3ba617ac17ad416c9c9ab8234051a1f4712143490f07eb23cb4dd41646"
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_linux_arm64.tar.gz"
+      sha256 "9519aec248ae1c13fd571d409412729c6396966a034dab7656c5f74f660f182b"
 
       def install
         bin.install "vac"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.7/vac_v0.0.7_linux_amd64.tar.gz"
-      sha256 "5401a755a02ea1c33a2b405a79989ed7cf5f1693bcbd4e17d441e85f13a47af0"
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_linux_amd64.tar.gz"
+      sha256 "50a2eddae508f02c41c7166e21bc318495c9804ecd81b22dd3b3add766d230cd"
 
       def install
         bin.install "vac"
