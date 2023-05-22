@@ -5,13 +5,13 @@
 class GitlabCiPipelinesExporter < Formula
   desc "GitLab CI pipelines exporter (prometheus/open-metrics)"
   homepage "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter"
-  version "0.5.4"
+  version "0.5.5"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.4/gitlab-ci-pipelines-exporter_edge_darwin_arm64.tar.gz"
-      sha256 "3578d27d3be2b90c9c71f1fc380d6595fed48c2e15ffdfd7226d28f3fbaf40de"
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.5/gitlab-ci-pipelines-exporter_edge_darwin_amd64.tar.gz"
+      sha256 "b5682034f4ff4aa339200d1e3d8d1f01939ad1ee4296bf172329435782a807e3"
 
       def install
         bin.install "gitlab-ci-pipelines-exporter"
@@ -20,9 +20,9 @@ class GitlabCiPipelinesExporter < Formula
         man1.install "./helpers/manpages/gitlab-ci-pipelines-exporter.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.4/gitlab-ci-pipelines-exporter_edge_darwin_amd64.tar.gz"
-      sha256 "626ab6e2b5c856896798ab2f7dd933fe8da271a6891034b27342820cd9fca59a"
+    if Hardware::CPU.arm?
+      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.5/gitlab-ci-pipelines-exporter_edge_darwin_arm64.tar.gz"
+      sha256 "cc36d405ce85d77e9b5aa13a00e1cc582519d10011617ca057c7903aa1c6379d"
 
       def install
         bin.install "gitlab-ci-pipelines-exporter"
@@ -34,9 +34,9 @@ class GitlabCiPipelinesExporter < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.4/gitlab-ci-pipelines-exporter_edge_linux_armv6.tar.gz"
-      sha256 "c48f09be1071d30c76bc7b3ae89748d346cfca9f36a068fc690304291b667bc0"
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.5/gitlab-ci-pipelines-exporter_edge_linux_amd64.tar.gz"
+      sha256 "899cc2bad81416abc12890e4c8a4032daf94681e8cb93e44fc6bcd0a4fd42e85"
 
       def install
         bin.install "gitlab-ci-pipelines-exporter"
@@ -45,9 +45,9 @@ class GitlabCiPipelinesExporter < Formula
         man1.install "./helpers/manpages/gitlab-ci-pipelines-exporter.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.4/gitlab-ci-pipelines-exporter_edge_linux_amd64.tar.gz"
-      sha256 "84c5e8b763651351e96737962c75cd6b16dc055c46b130741f66a07347f75d9c"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.5/gitlab-ci-pipelines-exporter_edge_linux_armv6.tar.gz"
+      sha256 "ff5af0cd5c15653bc82343f107093c10ace0515e55a177850189a765867f08a5"
 
       def install
         bin.install "gitlab-ci-pipelines-exporter"
@@ -57,8 +57,8 @@ class GitlabCiPipelinesExporter < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.4/gitlab-ci-pipelines-exporter_edge_linux_arm64.tar.gz"
-      sha256 "941dd44635f2abea9bc4198366d6ec918a8ec7e988a9e80f2eb7c6159a3335fe"
+      url "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/releases/download/v0.5.5/gitlab-ci-pipelines-exporter_edge_linux_arm64.tar.gz"
+      sha256 "6a9e2c3b9a8113fb13e9aa977e81d78a56472fb9175e3da7f767ee96404139b0"
 
       def install
         bin.install "gitlab-ci-pipelines-exporter"
