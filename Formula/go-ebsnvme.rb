@@ -5,14 +5,14 @@
 class GoEbsnvme < Formula
   desc "Fetch information about AWS EBS NVMe volumes"
   homepage "https://github.com/mvisonneau/go-ebsnvme"
-  version "0.1.4"
+  version "0.2.0"
   license "Apache-2.0"
   depends_on :linux
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/go-ebsnvme/releases/download/v0.1.4/go-ebsnvme_v0.1.4_linux_arm64.tar.gz"
-      sha256 "9a6b00581f1baeb364ef7915ee5fe7e30db97bf796f708026dd246ccef4f42b8"
+      url "https://github.com/mvisonneau/go-ebsnvme/releases/download/v0.2.0/go-ebsnvme_v0.2.0_linux_arm64.tar.gz"
+      sha256 "ff3d49a683fb5783ec3767ad212c7840296d1bb45a5bf6290bb194d0a9ef761b"
 
       def install
         bin.install "go-ebsnvme"
@@ -22,8 +22,8 @@ class GoEbsnvme < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/go-ebsnvme/releases/download/v0.1.4/go-ebsnvme_v0.1.4_linux_amd64.tar.gz"
-      sha256 "29007e38818ff5d7492cb2d3c5053259b1da5205459b11f9eae97ba9197b9c59"
+      url "https://github.com/mvisonneau/go-ebsnvme/releases/download/v0.2.0/go-ebsnvme_v0.2.0_linux_amd64.tar.gz"
+      sha256 "b941d68637abd440dfcc60e357b4b0d44cfb124896fde38b7ab0842611ecc571"
 
       def install
         bin.install "go-ebsnvme"
