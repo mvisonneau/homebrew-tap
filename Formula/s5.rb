@@ -5,51 +5,71 @@
 class S5 < Formula
   desc "Safely Store Super Sensitive Stuff"
   homepage "https://github.com/mvisonneau/s5"
-  version "0.1.12"
+  version "0.1.13"
+  license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_darwin_amd64.tar.gz"
-      sha256 "92401d1784ba93f0fd1908d9caa8271ed94c22615b5e7ef796a4d08069bf06ce"
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_darwin_amd64.tar.gz"
+      sha256 "4ed087a42ad4491da1985cf0f5aa3342b648bf2d46461efe488f7c6ad67d167f"
 
       def install
         bin.install "s5"
+        bash_completion.install "./helpers/autocomplete/bash" => "s5"
+        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+        man1.install "./helpers/manpages/s5.1.gz"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_darwin_arm64.tar.gz"
-      sha256 "9444b0a267c3c04775563159ddfffb7d4bae2d71427c6c8c0d14b30b65e059a4"
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_darwin_arm64.tar.gz"
+      sha256 "2db4b49266378a07c576829944ae877a23e6bc035299e52bafe05d24d779de18"
 
       def install
         bin.install "s5"
+        bash_completion.install "./helpers/autocomplete/bash" => "s5"
+        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+        man1.install "./helpers/manpages/s5.1.gz"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_linux_arm64.tar.gz"
-      sha256 "c275a1c762253b42c5a294fddf035d68d4cd978875aa1face900c3232fc51cc6"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_linux_armv6.tar.gz"
+      sha256 "8c077b9bf61b5e6ad7a07f55272794adda2599ea6fc348b691f3bbf219d10b13"
 
       def install
         bin.install "s5"
+        bash_completion.install "./helpers/autocomplete/bash" => "s5"
+        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+        man1.install "./helpers/manpages/s5.1.gz"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_linux_armv6.tar.gz"
-      sha256 "3900f41a56344677373e8839c9fc59f050fcc83825f056162ec52fa389c35d2b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_linux_arm64.tar.gz"
+      sha256 "65f26809802430cbe52df3a812420d6d09a81413e1c59a2902b31a8c25a0d884"
 
       def install
         bin.install "s5"
+        bash_completion.install "./helpers/autocomplete/bash" => "s5"
+        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+        man1.install "./helpers/manpages/s5.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.12/s5_v0.1.12_linux_amd64.tar.gz"
-      sha256 "19ce2d5a052e25d798e9f0a25a572fc6da86578b6204cd7d9e8f916a75fee92c"
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_linux_amd64.tar.gz"
+      sha256 "8557900b9c6016798e328a41b735c8d29b9e9dfe42df6fb10533839f827293fc"
 
       def install
         bin.install "s5"
+        bash_completion.install "./helpers/autocomplete/bash" => "s5"
+        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+        man1.install "./helpers/manpages/s5.1.gz"
       end
     end
+  end
+
+  test do
+    system "#{bin}/s5 -v"
   end
 end
