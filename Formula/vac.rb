@@ -5,20 +5,20 @@
 class Vac < Formula
   desc "VAC - Vault AWS Credentials Manager"
   homepage "https://github.com/mvisonneau/vac"
-  version "0.0.8"
+  version "0.0.9"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_darwin_arm64.tar.gz"
-      sha256 "607d4b0c5ec263172196f392d2329607b87d178009047bca3d0a56dad2fbb4b3"
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.9/vac_v0.0.9_darwin_amd64.tar.gz"
+      sha256 "f708c5af99f8753ed35f567658b7c6875b03212f6902ee550c2c2123ccb2ad0c"
 
       def install
         bin.install "vac"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_darwin_amd64.tar.gz"
-      sha256 "438f2fb2d75861d11996bb998f9021f095f1ac255bab89fa1b9f5199527fdfa4"
+    if Hardware::CPU.arm?
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.9/vac_v0.0.9_darwin_arm64.tar.gz"
+      sha256 "eb06de7d9c7579d48949a25f03e7dc43115da03f6152f1687f9615a12adfe672"
 
       def install
         bin.install "vac"
@@ -27,17 +27,17 @@ class Vac < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_linux_arm64.tar.gz"
-      sha256 "9519aec248ae1c13fd571d409412729c6396966a034dab7656c5f74f660f182b"
+    if Hardware::CPU.intel?
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.9/vac_v0.0.9_linux_amd64.tar.gz"
+      sha256 "75f3665f74fdc78590653f7d6b7587eb70b0b939760dff430eea9dd28f638bdf"
 
       def install
         bin.install "vac"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/vac/releases/download/v0.0.8/vac_v0.0.8_linux_amd64.tar.gz"
-      sha256 "50a2eddae508f02c41c7166e21bc318495c9804ecd81b22dd3b3add766d230cd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mvisonneau/vac/releases/download/v0.0.9/vac_v0.0.9_linux_arm64.tar.gz"
+      sha256 "3ecdf5d4102d92c1ad663d28e781540fa1a6e89f84752e3828e15c798d659344"
 
       def install
         bin.install "vac"
