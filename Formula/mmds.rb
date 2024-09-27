@@ -5,20 +5,20 @@
 class Mmds < Formula
   desc "Missed (AWS) Meta-Data (service)"
   homepage "https://github.com/mvisonneau/mmds"
-  version "0.1.4"
+  version "0.1.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/mmds/releases/download/v0.1.4/mmds_v0.1.4_darwin_arm64.tar.gz"
-      sha256 "71073db264b3ad02d21c960cc0c6063de36b814404a2ef6b8b7995a8b55e9f7c"
+    on_intel do
+      url "https://github.com/mvisonneau/mmds/releases/download/v0.1.5/mmds_v0.1.5_darwin_amd64.tar.gz"
+      sha256 "15ef54892f872dab320e8e028fd03d0e8ccdcd4320078f45a4a9426960d79581"
 
       def install
         bin.install "mmds"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/mmds/releases/download/v0.1.4/mmds_v0.1.4_darwin_amd64.tar.gz"
-      sha256 "fcff87eb4d7915f93483f5328226ec7f695eea8fc929027fb6a84c15bd275d69"
+    on_arm do
+      url "https://github.com/mvisonneau/mmds/releases/download/v0.1.5/mmds_v0.1.5_darwin_arm64.tar.gz"
+      sha256 "6770382310f17ed939e730b443916e4c8ce5a7e04b5be90fa863d7c11349d380"
 
       def install
         bin.install "mmds"
@@ -27,20 +27,24 @@ class Mmds < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/mmds/releases/download/v0.1.4/mmds_v0.1.4_linux_amd64.tar.gz"
-      sha256 "20ba722d1b7eef0fc7cb3291be7cbf35c9160fcb0d1b760b9b6a67ad2c5c9d44"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mvisonneau/mmds/releases/download/v0.1.5/mmds_v0.1.5_linux_amd64.tar.gz"
+        sha256 "4ff855f9df994c54bf3fb10bdf79c7549586416a52dcac87e9b40eef467326cc"
 
-      def install
-        bin.install "mmds"
+        def install
+          bin.install "mmds"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/mmds/releases/download/v0.1.4/mmds_v0.1.4_linux_arm64.tar.gz"
-      sha256 "ac09f2696e43297104ff55ffc71b97987622914d1c82aea07690b86f9477b3be"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mvisonneau/mmds/releases/download/v0.1.5/mmds_v0.1.5_linux_arm64.tar.gz"
+        sha256 "d7f33465fe1f0b2a44e8d02a4196a6281442802820da6235a847b1d47c6f497a"
 
-      def install
-        bin.install "mmds"
+        def install
+          bin.install "mmds"
+        end
       end
     end
   end
