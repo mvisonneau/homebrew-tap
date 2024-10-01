@@ -5,13 +5,13 @@
 class S5 < Formula
   desc "Safely Store Super Sensitive Stuff"
   homepage "https://github.com/mvisonneau/s5"
-  version "0.1.13"
+  version "0.1.15"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_darwin_amd64.tar.gz"
-      sha256 "4ed087a42ad4491da1985cf0f5aa3342b648bf2d46461efe488f7c6ad67d167f"
+    on_intel do
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.15/s5_v0.1.15_darwin_amd64.tar.gz"
+      sha256 "52ba82823666791e819fe44988e0c9ae71773208831acce0b4c66c088e7845f6"
 
       def install
         bin.install "s5"
@@ -20,9 +20,9 @@ class S5 < Formula
         man1.install "./helpers/manpages/s5.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_darwin_arm64.tar.gz"
-      sha256 "2db4b49266378a07c576829944ae877a23e6bc035299e52bafe05d24d779de18"
+    on_arm do
+      url "https://github.com/mvisonneau/s5/releases/download/v0.1.15/s5_v0.1.15_darwin_arm64.tar.gz"
+      sha256 "72fb92dbb123e68da68353c224a174334503b3ade5b693cd756d45f671e33e2e"
 
       def install
         bin.install "s5"
@@ -34,37 +34,43 @@ class S5 < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_linux_armv6.tar.gz"
-      sha256 "8c077b9bf61b5e6ad7a07f55272794adda2599ea6fc348b691f3bbf219d10b13"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mvisonneau/s5/releases/download/v0.1.15/s5_v0.1.15_linux_amd64.tar.gz"
+        sha256 "eec17023c14394c5f16b23ffcafd0d63cffe6f4262c5537869613810c019d5d5"
 
-      def install
-        bin.install "s5"
-        bash_completion.install "./helpers/autocomplete/bash" => "s5"
-        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
-        man1.install "./helpers/manpages/s5.1.gz"
+        def install
+          bin.install "s5"
+          bash_completion.install "./helpers/autocomplete/bash" => "s5"
+          zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+          man1.install "./helpers/manpages/s5.1.gz"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_linux_arm64.tar.gz"
-      sha256 "65f26809802430cbe52df3a812420d6d09a81413e1c59a2902b31a8c25a0d884"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/mvisonneau/s5/releases/download/v0.1.15/s5_v0.1.15_linux_armv6.tar.gz"
+        sha256 "173f3e6da278255254d6c0aec97a4d4f4052db58728aa6f718f900cc3e6f5a08"
 
-      def install
-        bin.install "s5"
-        bash_completion.install "./helpers/autocomplete/bash" => "s5"
-        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
-        man1.install "./helpers/manpages/s5.1.gz"
+        def install
+          bin.install "s5"
+          bash_completion.install "./helpers/autocomplete/bash" => "s5"
+          zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+          man1.install "./helpers/manpages/s5.1.gz"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mvisonneau/s5/releases/download/v0.1.13/s5_v0.1.13_linux_amd64.tar.gz"
-      sha256 "8557900b9c6016798e328a41b735c8d29b9e9dfe42df6fb10533839f827293fc"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mvisonneau/s5/releases/download/v0.1.15/s5_v0.1.15_linux_arm64.tar.gz"
+        sha256 "85340eb6351c0084745a730e6eb02fc0643e7629e4076c3df7649f82f47bbe5a"
 
-      def install
-        bin.install "s5"
-        bash_completion.install "./helpers/autocomplete/bash" => "s5"
-        zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
-        man1.install "./helpers/manpages/s5.1.gz"
+        def install
+          bin.install "s5"
+          bash_completion.install "./helpers/autocomplete/bash" => "s5"
+          zsh_completion.install "./helpers/autocomplete/zsh" => "_s5"
+          man1.install "./helpers/manpages/s5.1.gz"
+        end
       end
     end
   end
